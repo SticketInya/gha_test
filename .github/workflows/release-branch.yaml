@@ -29,6 +29,10 @@ jobs:
         with:
           path: ./package.json
           version: '${{ github.event.inputs.version }}'
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "chore(*): release bump"
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
         with:
