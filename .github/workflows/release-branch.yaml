@@ -33,5 +33,6 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         with:
           base: dev
+          token: ${{secrets.GITHUB_TOKEN}}
           branch: 'release/${{ steps.date.outputs.date }}_${{ github.event.inputs.version }}'
           title: '[Automated]: ${{ github.event.inputs.version }} downmerge'
