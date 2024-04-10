@@ -22,6 +22,8 @@ jobs:
         with:
           branch: 'refs/heads/release/${{ steps.date.outputs.date }}_${{ github.event.inputs.version }}'
           sha: '${{ github.event.pull_request.head.sha }}'
+      - name: Checkout
+        uses: actions/checkout@v3
       - name: Update Version
         uses: jaywcjlove/github-action-package@main
         with:
